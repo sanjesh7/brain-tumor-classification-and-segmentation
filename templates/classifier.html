@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='classifier.css') }}">
+    <!-- <link rel="stylesheet" href="../static/classifier.css"> -->
+    <title>Brain Tumor Classifier</title>
+</head>
+<body>
+    <!-- top banner -->
+    <div class="top-banner">
+        <div class="container">
+            <div class="small-bold-text banner-text"> 🧠 New to brain tumor insight: Your one-stop solution for tumor detection and understanding</div>
+        </div>
+    </div>
+
+    <!-- navbar -->
+    <nav>
+     <div class="container main-nav flex">
+        <a href="index.html" class="company-logo flex">
+            <img src="../static/asset/logo.png" alt="company logo">
+            <h3>Brain Tumor Insight</h3>
+          </a>
+          <div class="nav-links">
+            <ul class="flex">
+             <li><a href="home" class="hover-link">Home</a></li>
+             <li><a href="#" class="hover-link">Classifier</a></li>
+             <li><a href="about" class="hover-link">About</a></li>
+            </ul>
+        </div>
+        <div class="nav-img">
+            <img src="../static/asset/img3.png" alt="dark mode" class="img margin g"  id="change-color">
+        </div>
+     </div>
+    </nav>
+
+    <!-- main section -->
+    <div style="height: 70vh;">
+        <div class="container flex main-container">
+            <form action="/classifier" method="post" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*">
+                <input type="submit" value="Upload">
+            </form>
+            <div class="image-div">
+                {% if img_path %}
+                <img src="../static/uploads/temp_image.jpg" alt="Uploaded Image">
+                {% endif %}
+                {% if img %}
+                <img src="../static/uploads/tumor-image.jpg" alt="tumor segmented Image">
+                {% endif %}
+            
+                <div class="result">
+                    {% if predicted_class %}
+                        <p>Predicted class: {{ predicted_class }}</p>
+                        <!-- <p>Predicted probability: {{ predicted_prob }}</p> -->
+                    {% endif %}
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- footer section -->
+    <div class="sub-footer">
+        <div class="container flex subfooter-container">
+            <a href="#" class="hover-link">Privacy Policy</a>
+            <a href="#" class="hover-link">Terms & condition</a>
+            <a href="#" class="hover-link"> Security Information</a>
+            
+            <a href="#" class="hover-link"><i class="fa-brands fa-facebook"></i></a>
+            <a href="" class="hover-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+    </div>
+    
+    <script src="https://kit.fontawesome.com/71f3c9c143.js" crossorigin="anonymous"></script>
+    <script>
+        var val=0;
+        document.getElementById("change-color").addEventListener("click",()=>{
+            document.querySelector("body").classList.toggle("dark");
+            document.querySelector("nav").classList.toggle("dark");
+            if(val==0){
+                document.getElementById("change-color").src="https://cdn4.iconfinder.com/data/icons/multimedia-flat-30px/30/sun_light_mode_day-512.png";
+                val=1;
+            } else {
+                document.getElementById("change-color").src="https://static.thenounproject.com/png/2712425-200.png";
+                val=0;
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <!-- <link rel="stylesheet" href="../static/about.css"> -->
+    <title></title>
+</head>
+<body>
+    <!-- top banner -->
+        <div class="top-banner">
+            <div class="container">
+                <div class="small-bold-text banner-text"> 🧠 New to brain tumor insight: Your one-stop solution for tumor detection and understanding</div>
+            </div>
+        </div>
+
+    <!-- navbar -->
+    <nav>
+     <div class="container main-nav flex">
+        <a href="#" class="company-logo flex">
+            <img src="../static/asset/logo.png" alt="company logo">
+            <h3>Brain Tumor Insight</h3>
+          </a>
+          <div class="nav-links">
+            <ul class="flex">
+             <li><a href="home" class="hover-link">Home</a></li>
+             <li><a href="classifier" class="hover-link">Classifier</a></li>
+             <li><a href="#" class="hover-link">About</a></li>
+            </ul>
+        </div>
+        <div class="nav-img">
+            <img src="../static/asset/img3.png" alt="dark mode" class="img margin g"  id="change-color">
+        </div>
+     </div>
+    </nav>
+
+    <main class="container">
+        <div class="box">
+            <h1>About Us</h1>
+            <div class="box-content">
+                <h2>General view of our Systems:</h2>
+                <p class="para">Our project employs Convolutional Neural Networks (CNN) for brain tumor classification and digital image processing for segmentation, with a user-friendly web interface built using HTML, CSS, and JavaScript on the front end, and Flask on the back end for robustness and scalability. The system accurately classifies brain tumors into glioma, pituitary, meningioma, or no tumor categories, trained on a diverse dataset. Users navigate through Home, About, and Classifier routes, with the Classifier allowing uploads for immediate tumor type prediction. Our goal is to simplify brain tumor classification, aiding medical professionals and other users.</p>
+            </div>
+            <div class="box-content">
+                <h2>Data Set Used:(Kaggle)</h2>
+                <p class="para">
+                    The Brain Tumor MRI Dataset, available on Kaggle, contains 8000 high-resolution 2D Slices of brain MRI images. These images are divided into four groups: no tumor, meningioma tumor, glioma tumor, and pituitary tumor. This dataset is useful for training and testing machine learning and deep learning models for brain tumor classification. Having a "No Tumor" category is particularly valuable as it helps in distinguishing normal brain images from those with tumors. This dataset provides a comprehensive representation of different brain tumor types, aiding in the development of accurate classification models
+                </p>
+            </div>
+            <div class="box-content">
+                <h2>Algorithm Used:</h2>
+                <p class="para">
+                    In our brain tumor classification algorithm, the Convolutional Neural Network (CNN) architecture we used includes three layers designed to identify important patterns in the input images, helping to categorize tumors accurately. Each layer processes the data differently, and we added dropout layers to prevent the model from becoming too specialized on the training data. We also applied various data augmentation techniques to make our model more robust to different types of input. With careful adjustments and training, our CNN achieved impressive accuracy rates of 96% on the training set and 93% on the test set, showcasing its effectiveness in identifying brain tumors.
+                </p>
+                <p class="para">Moreover, The integration of digital image processing techniques for tumor segmentation enhances the algorithm's diagnostic capabilities by accurately outlining tumor boundaries. This helps users to  better analyze the tumor's location and size, aiding in treatment planning for patients.</p>
+                <p class="para">
+                    Additionally, we explored the effectiveness of alternative architectures such as VGG, GoogLeNet, and MobileNet, alongside traditional machine learning algorithms like Support Vector Machines (SVM) and Random Forest. This comparative analysis allowed us to assess the performance of our CNN model against these established techniques. Each architecture and algorithm was evaluated for its ability to accurately classify brain tumors based on the provided dataset
+                </p>
+            </div>
+        </div>
+    </main>
+    <div class="container">
+    <div class="box-content1">
+        <div class="imgsize">
+        <img src="../static/asset/cnn.png" alt="CNN_architecture">
+        </div>
+        <div>
+        <p class="para">  <b>Working of our CNN architecture :</b>  Building a brain tumor classification system with Convolutional Neural Networks (CNNs) involves a series of crucial steps. Initially, feature extraction is conducted using convolutional layers such as VGG16, ResNet, or DenseNet, which identify intricate patterns like edges and textures in input images, vital for distinguishing different brain tissue types. Non-linearity is then introduced through activation functions like ReLU, enabling the network to grasp complex relationships between features. Additionally, spatial reduction via pooling layers downsamples feature maps, focusing on relevant information, while fully connected layers establish connections between neurons to learn intricate feature relationships. To further enhance robustness, dropout layers and data augmentation techniques are incorporated, optimizing the network's performance.</p>
+        <p class="para">
+            Furthermore, during training and optimization, deep learning techniques, aided by backpropagation, refine network parameters to minimize prediction errors. Optimization algorithms like Stochastic Gradient Descent (SGD) or Adam adjust weights and biases, ensuring improved accuracy. Activation functions such as ReLU, Sigmoid, or Tanh continue to introduce non-linearity, allowing the network to adeptly learn complex patterns. Through the integration of dropout layers and data augmentation, our system not only enhances performance but also improves the network's resilience against overfitting and ensures more reliable tumor classification results.
+        </p>
+    </div>
+</div>
+    </div>
+
+
+    <div class="container">
+        <div class="box-content">
+        <p class="para">
+            <b>Working of Digital image processing for tumor segmentation :</b> We utilized digital image processing techniques for tumor segmentation in our project. The process involves several steps: initially, we resize the input image to a manageable 224x224 pixel size, reducing computational workload. Then, we adjust the image's contrast to ensure both foreground and background features are distinguishable. Subsequently, we convert the image to grayscale. Following this, we transform it into a binary image using a thresholding technique, resulting in a binary representation with only two colors: black and white, effectively highlighting tumor regions. To refine the segmentation, we employ operations to remove edges and unwanted noise, such as horizontal and vertical operations, followed by an erosion process. This erosion step aids in further noise reduction. Afterward, we perform dilation, which expands the remaining features. In cases where multiple clusters are present, we employ a breadth-first search (BFS) algorithm to identify and isolate the largest cluster, which typically corresponds to the tumor. I have applied this method for tumor detection, ensuring the grammar is corrected, and noting that the inputted image is assumed to be in grayscale.
+        </p>
+        <div class="show flex">
+            <a href=""><img src="../static/asset/digi0.png" alt="segmentation _image"></a>
+            <a href=""><img src="../static/asset/digi1.png" alt="segmentation_image"></a>
+            <a href=""><img src="../static/asset/digi3.png" alt="segmentation_image"></a>
+        </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="sub-footer">
+        <div class="container flex subfooter-container">
+            <a href="#" class="hover-link">Privacy Policy</a>
+            <a href="#" class="hover-link">Terms & condition</a>
+            <a href="#" class="hover-link"> Security Information</a>
+            
+            <a href="#" class="hover-link"><i class="fa-brands fa-facebook"></i></a>
+            <a href="" class="hover-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+       </div>
+    
+    
+        <script src="https://kit.fontawesome.com/71f3c9c143.js" crossorigin="anonymous"></script>
+</body>
+<script>
+    var val=0;
+document.getElementById("change-color").addEventListener("click",()=>{
+document.querySelector("body").classList.toggle("dark");
+document.querySelector("nav").classList.toggle("dark");
+if(val==0){
+document.getElementById("change-color").src="https://cdn4.iconfinder.com/data/icons/multimedia-flat-30px/30/sun_light_mode_day-512.png";
+val=1;
+}
+else{
+    document.getElementById("change-color").src="https://static.thenounproject.com/png/2712425-200.png";
+    val=0;
+}
+})
+</script>
+</html>

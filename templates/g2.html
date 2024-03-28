@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="height: 70vh;">
+        <div class="container flex main-container">
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" id="image-upload" accept="image/*" onchange="uploadImage()">
+            </form>
+            <div id="image-preview">
+                <img id="preview-image" src="#" alt="Uploaded Image">
+                <p id="predicted-class"></p>
+                <p id="predicted-prob"></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function uploadImage() {
+            var fileInput = document.getElementById('image-upload');
+            var file = fileInput.files[0];
+            
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var previewImage = document.getElementById('preview-image');
+                    previewImage.src = e.target.result;
+                    document.getElementById('image-preview').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+    
+</body>
+</html>

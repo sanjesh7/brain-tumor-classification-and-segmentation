@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- <link rel="stylesheet" href="../static/styles.css"> -->
+    <title></title>
+</head>
+<body>
+    <!-- top banner -->
+        <div class="top-banner">
+            <div class="container">
+                <div class="small-bold-text banner-text"> 🧠 New to brain tumor insight: Your one-stop solution for tumor detection and understanding</div>
+            </div>
+        </div>
+
+    <!-- navbar -->
+    <nav>
+     <div class="container main-nav flex">
+        <a href="#" class="company-logo flex">
+            <img src="../static/asset/logo.png" alt="company logo">
+            <h3>Brain Tumor Insight</h3>
+          </a>
+          <div class="nav-links">
+            <ul class="flex">
+             <li><a href="#" class="hover-link">Home</a></li>
+             <li><a href="classifier" class="hover-link">Classifier</a></li>
+             <li><a href="about" class="hover-link">About</a></li>
+            </ul>
+        </div>
+        <div class="nav-img">
+            <img src="../static/asset/img3.png" alt="dark mode" class="img margin g"  id="change-color">
+        </div>
+     </div>
+    </nav>
+
+<!-- header section -->
+    
+   <Header style="height: 70vh;">
+        <div class="container flex header-section">
+           
+                 <div class="header-left">
+                    <h1>About Tumors:</h1>
+                    <p>
+                        Brain tumors are abnormal growths of cells within brain tissue, categorized into benign (non-cancerous) and malignant (cancerous) types. These can originate in the brain (primary) or result from cancer spread (secondary). Common types include meningioma, glioma, pituitary tumors, and others. 
+                    </p>
+                    <p id="p2">
+                        Our website utilizes Convolutional Neural Networks (CNNs) to accurately classify brain tumors. By analyzing JPEG images extracted from MRI slices, we aid in early detection.
+                    </p>
+                    <a href="classifier.html" class="primary-button get-started-btn">Get started</a>
+                 </div>
+                 <div class="header-right">
+                    <img src="../static/asset/img9.png" alt="hero image">
+                 </div>
+        </div>
+    </Header>
+
+    <div class="sub-footer">
+        <div class="container flex subfooter-container">
+            <a href="#" class="hover-link">Privacy Policy</a>
+            <a href="#" class="hover-link">Terms & condition</a>
+            <a href="#" class="hover-link"> Security Information</a>
+            
+            <a href="#" class="hover-link"><i class="fa-brands fa-facebook"></i></a>
+            <a href="" class="hover-link"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+       </div>
+    
+    
+        <script src="https://kit.fontawesome.com/71f3c9c143.js" crossorigin="anonymous"></script>
+</body>
+<script>
+    var val=0;
+document.getElementById("change-color").addEventListener("click",()=>{
+document.querySelector("body").classList.toggle("dark");
+document.querySelector("nav").classList.toggle("dark");
+if(val==0){
+document.getElementById("change-color").src="https://cdn4.iconfinder.com/data/icons/multimedia-flat-30px/30/sun_light_mode_day-512.png";
+val=1;
+}
+else{
+    document.getElementById("change-color").src="https://static.thenounproject.com/png/2712425-200.png";
+    val=0;
+}
+})
+</script>
+</html>
